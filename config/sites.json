@@ -1,0 +1,271 @@
+{
+  "sites": [
+    {
+      "url": "https://procon.df.gov.br/category/noticias/",
+      "pagination": {
+        "strategy": "rss-feed",
+        "template": "https://procon.df.gov.br/category/noticias/feed/?paged={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        "li.list-group-item a"
+      ]
+    },
+    {
+      "url": "https://procon.es.gov.br/Noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://procon.es.gov.br/Noticias?page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".noticia a"
+      ]
+    },
+    {
+      "url": "https://www.procon.ma.gov.br/noticias/",
+      "pagination": {
+        "strategy": "api-wordpress",
+        "template": "https://www.procon.ma.gov.br/wp-json/wp/v2/posts?per_page=100&page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".item-noticia a"
+      ]
+    },
+    {
+      "url": "https://www.procon.mt.gov.br/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://www.procon.mt.gov.br/noticias?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_uBRDdcUqvCaJ&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_r_p_resetCur=false&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_uBRDdcUqvCaJ_redirect=%2Fnoticias%3Fpage%3D4&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_uBRDdcUqvCaJ_delta=10&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_uBRDdcUqvCaJ_cur={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".news-item a.title"
+      ]
+    },
+    {
+      "url": "https://www.mpmg.mp.br/portal/menu/comunicacao/noticias/",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://www.mpmg.mp.br/main.jsp?lumPageId=2C958085735D2D1701735E3735E2334F&lumA=1&lumII=2C96808778A843160178A864F60716AD&list.pagination={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".list-item a.card"
+      ]
+    },
+    {
+      "url": "https://procon.pb.gov.br/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://procon.pb.gov.br/noticias?b_start:int={offset}",
+        "startPage": 1,
+        "pageStep": 15,
+        "pageBase": 0
+      },
+      "linkSelector": [
+        "article a.url"
+      ]
+    },
+    {
+      "url": "https://www.procon.pr.gov.br/Noticias",
+      "pagination": {
+        "strategy": "single-page",
+        "startPage": 1,
+        "maxPages": 1
+      },
+      "linkSelector": [
+        ".item-news-content a[hreflang='pt-br']"
+      ]
+    },
+    {
+      "url": "https://www.rj.gov.br/noticias",
+      "pagination": {
+        "strategy": "api-json",
+        "template": "https://noticias.rj.gov.br/api/cms/noticias/?page={page}",
+        "startPage": 1,
+        "linkField": "slug",
+        "linkTemplate": "https://www.rj.gov.br/noticias/{value}",
+        "headers": {
+          "Authorization": "Api-Key wucHySi4.SE74AYwVZwC6UBGngpnGMkXXFCv1F1lZ"
+        }
+      },
+      "linkSelector": []
+    },
+    {
+      "url": "https://proconcarioca.prefeitura.rio/outras-noticias/",
+      "pagination": {
+        "strategy": "rss-feed",
+        "template": "https://proconcarioca.prefeitura.rio/outras-noticias/feed/?paged={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".section-content-categories a.btn"
+      ]
+    },
+    {
+      "url": "https://procon.niteroi.rj.gov.br/noticias/",
+      "pagination": {
+        "strategy": "api-wordpress",
+        "template": "https://procon.niteroi.rj.gov.br/wp-json/wp/v2/posts?per_page=100&page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".post-content .entry-title a"
+      ]
+    },
+    {
+      "url": "https://procon.rs.gov.br/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://procon.rs.gov.br/noticias?ordem=RECENTES&pagina={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".conteudo-lista__item__titulo a"
+      ]
+    },
+    {
+      "url": "https://portal.rr.gov.br/noticias/",
+      "pagination": {
+        "strategy": "api-wordpress",
+        "template": "https://portal.rr.gov.br/wp-json/wp/v2/posts?per_page=100&page={page}",
+        "startPage": 1
+      }
+    },
+    {
+      "url": "https://prefeitura.sp.gov.br/web/procon/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://prefeitura.sp.gov.br/web/procon/noticias?page_number_a893f95e-a5a5-22e6-d004-a8fc604a12d5={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".psp-news-container a"
+      ]
+    },
+    {
+      "url": "https://procon.campinas.sp.gov.br/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://procon.campinas.sp.gov.br/noticias?page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".field-content a"
+      ]
+    },
+    {
+      "url": "https://procon.santos.sp.gov.br/noticias",
+      "pagination": {
+        "strategy": "firecrawl",
+        "template": "https://procon.santos.sp.gov.br/noticias?page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        "main a"
+      ]
+    },
+    {
+      "url": "https://noticias.sorocaba.sp.gov.br/category/procon-sorocaba/",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://noticias.sorocaba.sp.gov.br/category/procon-sorocaba/page/{page}/",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".cartao-lista-noticias a.black-text"
+      ],
+      "skipTlsVerify": true
+    },
+    {
+      "url": "https://procon.se.gov.br/noticias/",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://procon.se.gov.br/noticias/?query-5-page={page}/",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".wp-block-post-title a"
+      ]
+    },
+    {
+      "url": "https://goias.gov.br/procon/categoria/noticias-procon/",
+      "pagination": {
+        "strategy": "api-wordpress",
+        "template": "https://goias.gov.br/procon/wp-json/wp/v2/posts?per_page=100&page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".entry-title a"
+      ]
+    },
+    {
+      "url": "https://sedihpop.ma.gov.br/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://sedihpop.ma.gov.br/noticias/P{offset}/",
+        "startPage": 1,
+        "pageStep": 10,
+        "pageBase": 0
+      },
+      "linkSelector": [
+        "a.h-entry__u-url"
+      ]
+    },
+    {
+      "url": "https://procon.pa.gov.br/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://procon.pa.gov.br/noticias?page={page}/",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".noticias-page-item h3 a"
+      ]
+    },
+    {
+      "url": "https://www.semjidh.rn.gov.br/noticias",
+      "pagination": {
+        "strategy": "api-wordpress",
+        "template": "https://www.semjidh.rn.gov.br/wp-json/wp/v2/materia?per_page=100&page={page}",
+        "startPage": 1
+      }
+    },
+    {
+      "url": "https://rondonia.ro.gov.br/procon/noticias/",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://rondonia.ro.gov.br/procon/noticias/pg/{page}/",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".title a.bolder"
+      ]
+    },
+    {
+      "url": "https://www.to.gov.br/procon/noticias",
+      "pagination": {
+        "strategy": "path-template",
+        "template": "https://www.to.gov.br/procon/noticias?pagina={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        ".news-card .xl3 a"
+      ]
+    },
+    {
+      "url": "https://agencia.ac.gov.br/ultimas-noticias/",
+      "pagination": {
+        "strategy": "api-wordpress",
+        "template": "https://agencia.ac.gov.br/wp-json/wp/v2/posts?per_page=100&tags=366&page={page}",
+        "startPage": 1
+      },
+      "linkSelector": [
+        "article.elementor-post .elementor-post__title a"
+      ],
+      "comment": "Tag 366 = procon (503 posts)"
+    }
+  ]
+}

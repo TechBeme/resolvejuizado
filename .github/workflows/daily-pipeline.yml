@@ -1,0 +1,40 @@
+name: Daily Pipeline
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # Diariamente às 6h UTC (3h Brasília)
+  workflow_dispatch: {}
+
+jobs:
+  ingest-and-publish:
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 24.11.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: 🏛️ Executar pipeline completo (buscar e publicar notícias)
+        run: npx tsx src/index.ts --throttle-ms=5000 --publish
+        env:
+          WORDPRESS_BASE_URL: ${{ secrets.WORDPRESS_BASE_URL }}
+          WORDPRESS_APP_USER: ${{ secrets.WORDPRESS_APP_USER }}
+          WORDPRESS_APP_PASSWORD: ${{ secrets.WORDPRESS_APP_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          AI_TEXT_MODEL: ${{ secrets.AI_TEXT_MODEL || 'google/gemini-2.5-flash' }}
+          AI_IMAGE_MODEL: ${{ secrets.AI_IMAGE_MODEL || 'google/gemini-2.5-flash-image-preview' }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HTTP_PROXY: ${{ secrets.HTTP_PROXY }}
+          HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
+          GITHUB_ACTIONS: true

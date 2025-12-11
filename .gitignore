@@ -1,0 +1,50 @@
+# Node / package managers
+node_modules/
+.pnpm-store/
+.turbo/
+
+# Build artifacts
+dist/
+build/
+data/
+
+# AI Assistant files
+docs/
+AGENTS.md
+*.md.backup
+conversation-*.md
+tasks-*.md
+
+# Temporary test files
+test-*.ts
+*-test-*.ts
+cleanup-*.ts
+reset-*.ts
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+accounts.json
+
+# Keep .env.example in repo
+!.env.example
+
+# Editor and OS metadata
+.DS_Store
+.idea/
+.vscode/
+
+# Python legacy
+.venv/
+__pycache__/
+*.pyc
+
+# Coverage / test artifacts
+.coverage
+coverage.xml
+htmlcov/
