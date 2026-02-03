@@ -2,88 +2,88 @@
 
 # 🏛️ ResolveJuizado Pipeline
 
-**Automated news aggregation and publication system for Brazilian Procon websites**
+**Sistema automatizado de agregação e publicação de notícias dos Procons brasileiros**
 
 [![Daily Pipeline](https://github.com/TechBeme/resolvejuizado/actions/workflows/daily-pipeline.yml/badge.svg)](https://github.com/TechBeme/resolvejuizado/actions/workflows/daily-pipeline.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-24.11.1-green?logo=node.js)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE)
 
-[Features](#-features) • [Architecture](#-architecture) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [CI/CD](#-cicd-github-actions)
+[Características](#-características) • [Arquitetura](#-arquitetura) • [Instalação](#-instalação) • [Configuração](#-configuração) • [Uso](#-uso) • [CI/CD](#-cicd-github-actions)
 
-**Languages:** [🇧🇷 Português](README.pt-BR.md) • [🇪🇸 Español](README.es.md)
+**Idiomas:** [🇺🇸 English](README.en.md) • [🇪🇸 Español](README.es.md)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## 📋 Sumário
 
-- [Overview](#-overview)
-- [About the Developer](#-about-the-developer)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
+- [Visão Geral](#-visão-geral)
+- [Sobre o Desenvolvedor](#-sobre-o-desenvolvedor)
+- [Características](#-características)
+- [Stack Tecnológica](#-stack-tecnológica)
+- [Arquitetura](#-arquitetura)
+- [Instalação](#-instalação)
+- [Configuração](#-configuração)
+- [Uso](#-uso)
 - [CI/CD](#-cicd-github-actions)
-- [Database](#-database)
-- [Development](#-development)
-- [License](#-license)
+- [Banco de Dados](#-banco-de-dados)
+- [Desenvolvimento](#-desenvolvimento)
+- [Licença](#-licença)
 
 ---
 
-## 🎯 Overview
+## 🎯 Visão Geral
 
-**ResolveJuizado Pipeline** is an enterprise-level system that automates the collection, AI-powered processing, and publication of news from **24 major Procon websites in Brazil**. The pipeline operates in two distinct phases, ensuring scalability and reliability through parallel processing and automatic failure recovery.
+O **ResolveJuizado Pipeline** é um sistema de nível empresarial que automatiza a coleta, processamento com IA e publicação de notícias dos **24 principais sites Procon do Brasil**. O pipeline opera em duas fases distintas, garantindo escalabilidade e confiabilidade através de processamento paralelo e recuperação automática de falhas.
 
-### Two-Phase Pipeline
+### Pipeline de Duas Fases
 
-**Phase 1 - Discovery (Parallel):**
-- Simultaneous crawling of 24 Procon websites
-- Intelligent duplicate detection
-- Automatic stop when existing URL is found
-- Automatic retry with fallback
+**Fase 1 - Descoberta (Paralelo):**
+- Crawl simultâneo de 24 sites Procon
+- Detecção inteligente de duplicatas
+- Parada automática ao encontrar URL existente
+- Retry automático com fallback
 
-**Phase 2 - Processing (Parallel):**
-- Content extraction with Firecrawl
-- Editorial rewriting with Google Gemini 3 Pro
-- Automatic SEO optimization (RankMath)
-- Generation of 3 AI images
-- WordPress publication with state-based categorization
+**Fase 2 - Processamento (Paralelo):**
+- Extração de conteúdo com Firecrawl
+- Reescrita editorial com Google Gemini 3 Pro
+- Otimização SEO automática (RankMath)
+- Geração de 3 imagens via IA
+- Publicação WordPress com categorização por estado
 
 ---
 
-## 👨‍💻 About the Developer
+## 👨‍💻 Sobre o Desenvolvedor
 
 <div align="center">
 
-**Developed by Rafael Vieira (TechBeme)**
+**Desenvolvido por Rafael Vieira (TechBeme)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
 [![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
 [![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
 [![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
 
-**Full-Stack Developer & AI Automation Specialist**
+**Desenvolvedor Full-Stack & Especialista em Automação com IA**
 
-Specialized in **web scraping**, **automation systems**, **modern web applications**, and **AI integrations**.
+Especializado em **web scraping**, **sistemas de automação**, **aplicações web modernas** e **integrações com IA**.
 
-### 💼 Core Expertise
+### 💼 Expertise Principal
 
-- 🔍 Web Scraping & Data Extraction
-- ⚡ Process Automation & Workflows
-- 💻 Full-Stack Development (Next.js, React, Python, TypeScript)
-- 🤖 AI Integrations (OpenAI, Anthropic, RAG systems)
-- 📊 Database Design & Optimization
-- 🎨 Modern UI/UX Development
+- 🔍 Web Scraping & Extração de Dados
+- ⚡ Automação de Processos & Workflows
+- 💻 Desenvolvimento Full-Stack (Next.js, React, Python, TypeScript)
+- 🤖 Integrações com IA (OpenAI, Anthropic, sistemas RAG)
+- 📊 Design & Otimização de Bancos de Dados
+- 🎨 Desenvolvimento de UI/UX Modernas
 
-### 🌍 Languages
+### 🌍 Idiomas
 
 🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
 
-### 📬 Contact
+### 📬 Contato
 
 **Email**: [contact@techbe.me](mailto:contact@techbe.me)
 
@@ -91,100 +91,100 @@ Specialized in **web scraping**, **automation systems**, **modern web applicatio
 
 ---
 
-## ✨ Features
+## ✨ Características
 
-### 🚀 Performance and Scalability
-- **100% parallel processing** with `Promise.allSettled()`
-- **Automatic retry** with intelligent fallback
-- **Automatic recovery** of orphaned articles (10min timeout)
-- **Duplicate detection** via unique URL in database
+### 🚀 Performance e Escalabilidade
+- **Processamento 100% paralelo** com `Promise.allSettled()`
+- **Retry automático** com fallback inteligente
+- **Recuperação automática** de artigos órfãos (timeout 10min)
+- **Detecção de duplicatas** via URL única no banco
 
-### 🤖 Artificial Intelligence
-- **Google Gemini 3 Pro** for editorial rewriting
-- **Zod validation** of schemas with automatic retry
-- **3-layer SEO**: instruction (175 chars) → truncation (195) → validation (200)
-- **AI image generation** with contextual relevance
-- **Automatic image optimization** with Sharp (reduces 60-80% of size)
+### 🤖 Inteligência Artificial
+- **Google Gemini 3 Pro** para reescrita editorial
+- **Validação Zod** de schemas com retry automático
+- **SEO em 3 camadas**: instrução (175 chars) → truncamento (195) → validação (200)
+- **Geração de imagens** contextualizadas via IA
+- **Otimização automática de imagens** com Sharp (reduz 60-80% do tamanho)
 
-### 📊 Observability
-- **Dual-mode logs**: structured JSON (local) + user-friendly (GitHub Actions)
-- **Emojis and natural language** in CI/CD logs
-- **Detailed summary** with statistics, URLs, and success rate
-- **Complete tracking** via `article_events`
+### 📊 Observabilidade
+- **Logs dual-mode**: JSON estruturado (local) + user-friendly (GitHub Actions)
+- **Emojis e linguagem natural** nos logs do CI/CD
+- **Resumo detalhado** com estatísticas, URLs e taxa de sucesso
+- **Rastreamento completo** via `article_events`
 
-### 🔒 Reliability
-- **State machine** with 4 stages (extraction → refine → media → publish)
-- **Automatic retry** with fallback between Firecrawl keys
-- **Idempotency** guaranteed by UNIQUE constraints
-- **Versioned migrations** in Supabase
+### 🔒 Confiabilidade
+- **State machine** com 4 estágios (extraction → refine → media → publish)
+- **Retry automático** com fallback entre chaves Firecrawl
+- **Idempotência** garantida por UNIQUE constraints
+- **Migrations versionadas** no Supabase
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológica
 
 ### Core
-| Technology | Version | Usage |
-|------------|---------|-------|
-| ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white) | 5.7.2 | Primary language |
+| Tecnologia | Versão | Uso |
+|------------|--------|-----|
+| ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white) | 5.7.2 | Linguagem principal |
 | ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white) | 24.11.1 LTS | Runtime |
-| ![tsx](https://img.shields.io/badge/-tsx-gray) | 4.19.2 | TypeScript execution |
+| ![tsx](https://img.shields.io/badge/-tsx-gray) | 4.19.2 | Execução TypeScript |
 
-### APIs & Integrations
-| Service | SDK/Client | Usage |
-|---------|-----------|-------|
-| ![WordPress](https://img.shields.io/badge/-WordPress-21759B?logo=wordpress&logoColor=white) | REST API | Content publication |
-| ![Supabase](https://img.shields.io/badge/-Supabase-3ECF8E?logo=supabase&logoColor=white) | @supabase/supabase-js | PostgreSQL database |
+### APIs & Integrações
+| Serviço | SDK/Cliente | Uso |
+|---------|-------------|-----|
+| ![WordPress](https://img.shields.io/badge/-WordPress-21759B?logo=wordpress&logoColor=white) | REST API | Publicação de conteúdo |
+| ![Supabase](https://img.shields.io/badge/-Supabase-3ECF8E?logo=supabase&logoColor=white) | @supabase/supabase-js | Banco de dados PostgreSQL |
 | ![Firecrawl](https://img.shields.io/badge/-Firecrawl-orange) | @mendable/firecrawl-js | Web scraping |
-| ![Google AI](https://img.shields.io/badge/-Gemini-4285F4?logo=google&logoColor=white) | Vercel AI SDK | Content generation |
+| ![Google AI](https://img.shields.io/badge/-Gemini-4285F4?logo=google&logoColor=white) | Vercel AI SDK | Geração de conteúdo |
 
-### Validation & Quality
-| Tool | Usage |
-|------|-------|
-| Zod 3.23.8 | Schema validation |
-| Vercel AI SDK | Structured outputs |
-| Pino (logger) | Structured logging |
+### Validação & Qualidade
+| Ferramenta | Uso |
+|------------|-----|
+| Zod 3.23.8 | Validação de schemas |
+| Vercel AI SDK | Saídas estruturadas |
+| Pino (logger) | Logging estruturado |
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Arquitetura
 
-### Directory Structure
+### Estrutura de Diretórios
 
 ```
 resolvejuizado/
 ├── src/
-│   ├── index.ts           # Main orchestrator
+│   ├── index.ts           # Orchestrator principal
 │   ├── clients/           # Firecrawl, Supabase, WordPress
 │   ├── pipeline/          # ingest.ts (discovery) + publish.ts (processing)
-│   ├── ai/                # AI rewriting and SEO
-│   ├── prompts/           # Structured prompts
-│   └── config/            # Configurations and environment variables
+│   ├── ai/                # Reescrita com IA e SEO
+│   ├── prompts/           # Prompts estruturados
+│   └── config/            # Configurações e variáveis de ambiente
 ├── supabase/              # Schema, migrations, functions
-├── tests/                 # Unit and E2E tests
-├── config/sites.json      # 24 Procon sites
-└── .github/workflows/     # Automated CI/CD
+├── tests/                 # Testes unitários e E2E
+├── config/sites.json      # 24 sites Procon
+└── .github/workflows/     # CI/CD automatizado
 ```
 
-### Data Flow
+### Fluxo de Dados
 
 ```
 ┌───────────────────────────────────────────────────────────────────┐
-│                     PHASE 1: DISCOVERY                            │
+│                     FASE 1: DESCOBERTA                            │
 │                                                                   │
 │  ┌────────────┐      ┌────────────┐      ┌──────────────────┐     │
-│  │ 24 Procon  │─────▶│ Firecrawl  │────▶│ Supabase         │     │
-│  │ Sites      │      │ Pool       │      │ (pending)        │     │
+│  │ 24 Sites   │─────▶│ Firecrawl  │────▶│ Supabase         │     │
+│  │ Procon     │      │ Pool       │      │ (pending)        │     │
 │  └────────────┘      └────────────┘      │ UNIQUE(URL)      │     │
 │                                          └──────────────────┘     │
 └───────────────────────────────────────────────────────────────────┘
                                  │
                                  ▼
 ┌───────────────────────────────────────────────────────────────────┐
-│                    PHASE 2: PROCESSING                            │
+│                    FASE 2: PROCESSAMENTO                          │
 │                                                                   │
 │  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐     │
-│  │ Extract  │───▶│ Refine   │──▶│  Media   │───▶│ Publish  │    │
-│  │Firecrawl │    │ (AI+SEO) │    │(3 imgs)  │    │(WordPress│     │
+│  │ Extrair  │───▶│ Refinar  │──▶│  Mídia   │───▶│ Publicar │    │
+│  │Firecrawl │    │ (IA+SEO) │    │(3 imgs)  │    │(WordPress│     │
 │  └──────────┘    └──────────┘    └──────────┘    └──────────┘     │
 │       │               │                │               │          │
 │       ▼               ▼                ▼               ▼          │
@@ -192,7 +192,7 @@ resolvejuizado/
 │       │               │                │               │          │
 │       ▼               ▼                ▼               ▼          │
 │  [succeeded]     [succeeded]      [succeeded]     [published]     │
-│     or              or               or              or           │
+│     ou              ou               ou              ou           │
 │  [failed]        [failed]         [failed]        [failed]        │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
@@ -200,51 +200,51 @@ resolvejuizado/
 
 ---
 
-## 📦 Installation
+## 📦 Instalação
 
-### Prerequisites
+### Pré-requisitos
 
-- **Node.js** 24.11.1 LTS ([nvm](https://github.com/nvm-sh/nvm) recommended)
-- **npm** 10+ (included with Node.js)
-- **Supabase** account (free tier)
-- **WordPress** account with REST API access
-- **Google AI Studio** API key (Gemini)
-- **Firecrawl** API key
+- **Node.js** 24.11.1 LTS ([nvm](https://github.com/nvm-sh/nvm) recomendado)
+- **npm** 10+ (incluso no Node.js)
+- Conta **Supabase** (free tier)
+- Conta **WordPress** com acesso REST API
+- API key **Google AI Studio** (Gemini)
+- API key **Firecrawl**
 
-### Quick Installation
+### Instalação Rápida
 
 ```bash
-# 1. Clone the repository
+# 1. Clone o repositório
 git clone https://github.com/TechBeme/resolvejuizado.git
 cd resolvejuizado
 
-# 2. Install dependencies
+# 2. Instale dependências
 npm install
 
-# 3. Configure environment
+# 3. Configure ambiente
 cp .env.example .env
-# Edit .env with your credentials (see Configuration section)
+# Edite .env com suas credenciais (veja seção Configuração)
 
-# 4. Add your Firecrawl keys to Supabase
-# Run: INSERT INTO firecrawl_accounts (api_key, status) VALUES ('fc-xxx', 'active');
+# 4. Adicione suas chaves Firecrawl no Supabase
+# Execute: INSERT INTO firecrawl_accounts (api_key, status) VALUES ('fc-xxx', 'active');
 
-# 5. Validate configuration
+# 5. Valide configuração
 npm run check-env
 
-# 6. WordPress setup (one-time only)
+# 6. Setup WordPress (apenas 1x)
 npm run setup-categories
 
-# 7. Run pipeline
+# 7. Execute pipeline
 npm run dev -- --skip-crawl --limit 5
 ```
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ Configuração
 
-### 1. Environment Variables (.env)
+### 1. Variáveis de Ambiente (.env)
 
-Copy `.env.example` to `.env` and fill in:
+Copie `.env.example` para `.env` e preencha:
 
 #### WordPress
 ```env
@@ -253,7 +253,7 @@ WORDPRESS_APP_USER=your-username
 WORDPRESS_APP_PASSWORD="xxxx xxxx xxxx xxxx xxxx xxxx"
 ```
 
-> 💡 **How to generate App Password:** WordPress Admin → Users → Profile → Application Passwords
+> 💡 **Como gerar App Password:** WordPress Admin → Users → Profile → Application Passwords
 
 #### Supabase
 ```env
@@ -262,7 +262,7 @@ SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIs...
 SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIs...
 ```
 
-> 💡 **Where to find:** Supabase Dashboard → Settings → API / Database
+> 💡 **Onde encontrar:** Supabase Dashboard → Settings → API / Database
 
 #### Google AI (Gemini)
 ```env
@@ -271,120 +271,120 @@ AI_TEXT_MODEL=google/gemini-3-pro-preview
 AI_IMAGE_MODEL=google/gemini-2.5-flash-image-preview
 ```
 
-> 💡 **Get key:** [Google AI Studio](https://aistudio.google.com/apikey)
+> 💡 **Obter chave:** [Google AI Studio](https://aistudio.google.com/apikey)
 
-#### Others
+#### Outros
 ```env
 LOG_LEVEL=info  # debug | info | warn | error
 
-# Optional: HTTP Proxy (to bypass geographic blocking)
-HTTP_PROXY=http://brazilian-proxy.com:8080
-HTTPS_PROXY=http://brazilian-proxy.com:8080
+# Opcional: Proxy HTTP (para contornar bloqueio geográfico)
+HTTP_PROXY=http://proxy-brasileiro.com:8080
+HTTPS_PROXY=http://proxy-brasileiro.com:8080
 ```
 
 ### 2. Firecrawl API Key
 
-Configure your Firecrawl API key in `.env`:
+Configure sua chave da API Firecrawl no `.env`:
 
 ```env
 FIRECRAWL_API_KEY=fc-your-api-key-here
 ```
 
-The system uses intelligent caching and automatic retry to optimize requests.
+O sistema usa cache inteligente e retry automático para otimizar as requisições.
 
-### 3. Supabase Database
+### 3. Banco de Dados Supabase
 
-Apply schema with Supabase CLI:
+Aplique o schema com Supabase CLI:
 
 ```bash
 npm install -g supabase
 supabase login
-supabase link --project-ref your-project-ref
+supabase link --project-ref seu-projeto-ref
 supabase db push
 ```
 
-Or execute manually via Dashboard → SQL Editor: files in `supabase/tables/`, `supabase/function/`, `supabase/migrations/`
+Ou execute manualmente via Dashboard → SQL Editor: arquivos em `supabase/tables/`, `supabase/function/`, `supabase/migrations/`
 
 ### 4. WordPress Setup
 
 ```bash
-# Create categories automatically (one-time only)
+# Criar categorias automaticamente (1x apenas)
 npm run setup-categories
 ```
 
-Creates 25 categories in WordPress, one for each state with configured Procon.
+Cria 25 categorias no WordPress, uma para cada estado com Procon configurado.
 
 ---
 
-## 🚀 Usage
+## 🚀 Uso
 
-### Main Commands
+### Comandos Principais
 
 ```bash
-# Complete pipeline (discovery + processing)
+# Pipeline completo (discovery + processing)
 npm run dev
 
-# Process pending articles only (skip discovery)
+# Apenas processar artigos pending (pula discovery)
 npm run dev -- --skip-crawl --limit 10
 
-# Process specific sites
+# Processar sites específicos
 npm run dev -- --sites procon-df-gov-br-category-noticias,procon-es-gov-br --limit 5
 
-# Publish directly to production (not as draft)
+# Publicar direto em produção (não como rascunho)
 npm run dev -- --skip-crawl --limit 20 --publish
 
-# View complete help
+# Ver ajuda completa
 npm run dev -- --help
 ```
 
-### Available Flags
+### Flags Disponíveis
 
-| Flag | Description | Default |
-|------|-------------|---------|
-| `--skip-crawl` | Skip Phase 1 (discovery), process only pending | `false` |
-| `--limit N` | Limit processing to N articles | `50` |
-| `--sites site1,site2` | Filter by specific site IDs | `all` |
-| `--publish` | Publish directly (not as draft) | `false` (draft) |
-| `--draft` | Publish as draft | `true` |
-| `--throttle-ms N` | Delay between Firecrawl requests (ms) | `5000` |
-| `--max-pages N` | Maximum pages per site in crawl | `200` |
+| Flag | Descrição | Padrão |
+|------|-----------|--------|
+| `--skip-crawl` | Pula Fase 1 (discovery), processa apenas pending | `false` |
+| `--limit N` | Limita processamento a N artigos | `50` |
+| `--sites site1,site2` | Filtra por IDs de sites específicos | `all` |
+| `--publish` | Publica direto (não como draft) | `false` (draft) |
+| `--draft` | Publica como rascunho | `true` |
+| `--throttle-ms N` | Delay entre requests Firecrawl (ms) | `5000` |
+| `--max-pages N` | Máximo de páginas por site no crawl | `200` |
 
-### Usage Examples
+### Exemplos de Uso
 
-**Quick test (5 articles, draft):**
+**Teste rápido (5 artigos, rascunho):**
 ```bash
 npm run dev -- --skip-crawl --limit 5
 ```
 
-**Process only Procon DF and ES:**
+**Processar apenas Procon DF e ES:**
 ```bash
 npm run dev -- --skip-crawl --sites procon-df-gov-br-category-noticias,procon-es-gov-br --limit 10 --publish
 ```
 
-**Complete crawl of all sites + process 50 articles:**
+**Crawl completo de todos os sites + processar 50 artigos:**
 ```bash
 npm run dev -- --limit 50 --publish
 ```
 
-**Crawl only (without processing):**
+**Crawl apenas (sem processar):**
 ```bash
-# Run discovery phase, then cancel before Phase 2
+# Execute discovery phase, depois cancele antes da Phase 2
 npm run dev -- --limit 0
 ```
 
-### Auxiliary Scripts
+### Scripts Auxiliares
 
 ```bash
-# Validate environment and credentials
+# Validar ambiente e credenciais
 npm run check-env
 
-# Test IP detection and proxy
+# Testar detecção de IP e proxy
 npm run test-ip
 
-# Build for production
+# Build para produção
 npm run build
 
-# Run tests
+# Executar testes
 npm test
 ```
 
@@ -394,118 +394,118 @@ npm test
 
 ### Workflow: Daily Pipeline
 
-**File:** `.github/workflows/daily-pipeline.yml`
+**Arquivo:** `.github/workflows/daily-pipeline.yml`
 
-**Frequency:** Daily at 6am UTC (3am Brasília)
+**Frequência:** Diariamente às 6h UTC (3h Brasília)
 
-**Manual Trigger:** Actions → Daily Pipeline → Run workflow
+**Trigger Manual:** Actions → Daily Pipeline → Run workflow
 
-### Secrets Configuration
+### Configuração de Secrets
 
-Add in GitHub: `Settings → Secrets and variables → Actions → New repository secret`
+Adicione no GitHub: `Settings → Secrets and variables → Actions → New repository secret`
 
-| Secret Name | Value | Where to Get |
-|-------------|-------|--------------|
-| `WORDPRESS_BASE_URL` | Your blog URL | WordPress |
-| `WORDPRESS_APP_USER` | WordPress username | WordPress → Users |
+| Secret Name | Valor | Onde Obter |
+|-------------|-------|------------|
+| `WORDPRESS_BASE_URL` | URL do seu blog | WordPress |
+| `WORDPRESS_APP_USER` | Username WordPress | WordPress → Users |
 | `WORDPRESS_APP_PASSWORD` | App Password | WordPress → Application Passwords |
-| `SUPABASE_URL` | Project URL | Supabase → Settings → API |
+| `SUPABASE_URL` | URL do projeto | Supabase → Settings → API |
 | `SUPABASE_SERVICE_ROLE_KEY` | Service role key | Supabase → Settings → API |
 | `GOOGLE_GENERATIVE_AI_API_KEY` | API Key | [Google AI Studio](https://aistudio.google.com/apikey) |
-| `AI_TEXT_MODEL` | `google/gemini-3-pro-preview` | (Optional) |
-| `AI_IMAGE_MODEL` | `google/gemini-2.5-flash-image-preview` | (Optional) |
-| `HTTP_PROXY` | `http://proxy.com:8080` | (Optional) Brazilian proxy |
-| `HTTPS_PROXY` | `http://proxy.com:8080` | (Optional) Brazilian proxy |
+| `AI_TEXT_MODEL` | `google/gemini-3-pro-preview` | (Opcional) |
+| `AI_IMAGE_MODEL` | `google/gemini-2.5-flash-image-preview` | (Opcional) |
+| `HTTP_PROXY` | `http://proxy.com:8080` | (Opcional) Proxy brasileiro |
+| `HTTPS_PROXY` | `http://proxy.com:8080` | (Opcional) Proxy brasileiro |
 
 
 
-### User-Friendly Logs
+### Logs User-Friendly
 
-The system automatically detects when running on GitHub Actions (`GITHUB_ACTIONS=true`) and switches to formatted logs:
+O sistema detecta automaticamente quando está rodando no GitHub Actions (`GITHUB_ACTIONS=true`) e muda para logs formatados:
 
-- ✅ Visual emojis
-- 📊 Progress [1/25]
-- 🌐 Natural language
-- 📰 Final summary with URLs
-- ⚠️ Error details
+- ✅ Emojis visuais
+- 📊 Progresso [1/25]
+- 🌐 Linguagem natural
+- 📰 Resumo final com URLs
+- ⚠️ Detalhes de erros
 
-**Log example:**
+**Exemplo de log:**
 ```
 ════════════════════════════════════════════════════════════════
-  🏛️  RESOLVEJUIZADO - NEWS PIPELINE
+  🏛️  RESOLVEJUIZADO - PIPELINE DE NOTÍCIAS
 ════════════════════════════════════════════════════════════════
 
-🌐 Running from: 123.45.6.789 • São Paulo, SP • Brazil
-🔒 Using configured proxy: http://brazilian-proxy.com:8080
+🌐 Executando a partir de: 123.45.6.789 • São Paulo, SP • Brazil
+🔒 Usando proxy configurado: http://proxy-brasileiro.com:8080
 
-━━━ PHASE 1: DISCOVERING NEW NEWS ━━━
+━━━ FASE 1: DESCOBRINDO NOVAS NOTÍCIAS ━━━
 
-🔍 [1/25] Searching for news at: https://procon.df.gov.br
-✅ Found 3 new articles
+🔍 [1/25] Buscando notícias em: https://procon.df.gov.br
+✅ Encontradas 3 notícias novas
 
-📊 EXECUTION SUMMARY
-⏱️  Total time: 5min 32s
-✅ Successfully published: 11
-📰 Published articles:
-   1. Procon DF inspects school supplies 2025
+📊 RESUMO DA EXECUÇÃO
+⏱️  Tempo total: 5min 32s
+✅ Publicadas com sucesso: 11
+📰 Notícias publicadas:
+   1. Procon DF fiscaliza material escolar 2025
       🔗 WordPress: https://blog.resolvejuizado.com.br/?p=3824
 ```
 
-### 🌍 Geographic Blocking & Proxy
+### 🌍 Bloqueio Geográfico & Proxy
 
-The system **automatically detects your IP and location** at the beginning of each execution and displays in logs:
+O sistema **detecta automaticamente seu IP e localização** no início de cada execução e mostra nos logs:
 
 ```
-🌐 Running from: 123.45.6.789 • São Paulo, SP • Brazil (Example ISP)
+🌐 Executando a partir de: 123.45.6.789 • São Paulo, SP • Brazil (Example ISP)
 ```
 
-Some Procon sites block foreign datacenter IPs (GitHub Actions runs in the US/Europe). The system has **automatic fallback to Firecrawl** which uses its own proxies, without needing additional configuration.
+Alguns sites Procon bloqueiam IPs de datacenters estrangeiros (GitHub Actions roda nos EUA/Europa). O sistema possui **fallback automático para Firecrawl** que usa proxies próprios, sem necessidade de configuração adicional.
 
-Optionally, configure a Brazilian proxy in `.env`:
+Opcionalmente, configure um proxy brasileiro no `.env`:
 ```env
-HTTP_PROXY=http://brazilian-proxy.com:8080
-HTTPS_PROXY=http://brazilian-proxy.com:8080
+HTTP_PROXY=http://proxy-brasileiro.com:8080
+HTTPS_PROXY=http://proxy-brasileiro.com:8080
 ```
 
-In GitHub Actions, add `HTTP_PROXY` and `HTTPS_PROXY` as Secrets.
+No GitHub Actions, adicione `HTTP_PROXY` e `HTTPS_PROXY` como Secrets.
 
 ---
 
-## 🗄️ Database
+## 🗄️ Banco de Dados
 
-### Database Structure
+### Estrutura do Banco
 
-The complete schema is in `supabase/tables/`. Main tables:
+O schema completo está em `supabase/tables/`. Principais tabelas:
 
-- **ingestion_runs** - Pipeline execution history
-- **articles** - Articles with state machine (extraction → refine → media → publish)
-- **article_media** - AI-generated images
-- **article_events** - Event log for audit
-- **wordpress_categories** - State → WordPress category mapping
+- **ingestion_runs** - Histórico de execuções do pipeline
+- **articles** - Artigos com state machine (extraction → refine → media → publish)
+- **article_media** - Imagens geradas pela IA
+- **article_events** - Log de eventos para auditoria
+- **wordpress_categories** - Mapa estado → categoria WordPress
 
-Apply migrations via Supabase CLI (`supabase db push`) or Dashboard SQL Editor.
+Aplique migrations via Supabase CLI (`supabase db push`) ou Dashboard SQL Editor.
 
 ---
 
-## 💻 Development
+## 💻 Desenvolvimento
 
-### Branch Structure
+### Estrutura de Branch
 
 ```
-main              # Production (protected)
-└── feature/*     # New features
+main              # Produção (protegida)
+└── feature/*     # Features novas
 ```
 
-### Development Workflow
+### Workflow de Desenvolvimento
 
 ```bash
-# 1. Create branch
-git checkout -b feature/feature-name
+# 1. Criar branch
+git checkout -b feature/nome-feature
 
-# 2. Develop with hot reload
+# 2. Desenvolver com hot reload
 npm run dev -- --skip-crawl --limit 3
 
-# 3. Test
+# 3. Testar
 npm test
 
 # 4. Build
@@ -513,52 +513,52 @@ npm run build
 
 # 5. Commit
 git add .
-git commit -m "feat: feature description"
+git commit -m "feat: descrição da feature"
 
-# 6. Push and PR
-git push origin feature/feature-name
+# 6. Push e PR
+git push origin feature/nome-feature
 ```
 
-### Code Conventions
+### Convenções de Código
 
-- **Strict TypeScript** (strict mode)
-- **Indentation:** 2 spaces
-- **Imports:** Relative paths with `.js` (ESM)
+- **TypeScript estrito** (strict mode)
+- **Indentação:** 2 espaços
+- **Imports:** Caminhos relativos com `.js` (ESM)
 - **Naming:**
-  - `camelCase`: variables, functions
-  - `PascalCase`: classes, types
-  - `SCREAMING_SNAKE_CASE`: constants
+  - `camelCase`: variáveis, funções
+  - `PascalCase`: classes, tipos
+  - `SCREAMING_SNAKE_CASE`: constantes
 
 ---
 
-## 📝 License
+## 📝 Licença
 
-**Proprietary License - All Rights Reserved**
+**Licença Proprietária - Todos os Direitos Reservados**
 
 Copyright © 2026 Rafael Vieira (TechBeme)
 
-### ❌ Restrictions
+### ❌ Restrições
 
-- No commercial use
-- No modifications or derivative works
-- No distribution or sublicensing
-- No reverse engineering
+- Proibido uso comercial
+- Proibido modificações ou trabalhos derivados
+- Proibido distribuição ou sublicenciamento
+- Proibida engenharia reversa
 
-### ✅ Permitted Use
+### ✅ Uso Permitido
 
-- View source code for educational purposes
-- Run for personal, non-commercial use
-- Fork for personal study only
+- Visualizar código-fonte para fins educacionais
+- Executar para uso pessoal e não comercial
+- Fork para estudo pessoal apenas
 
-### 📧 Commercial Licensing
+### 📧 Licenciamento Comercial
 
-For commercial use, contact: [contact@techbe.me](mailto:contact@techbe.me)
+Para uso comercial, entre em contato: [contact@techbe.me](mailto:contact@techbe.me)
 
 ---
 
 <div align="center">
 
-**Developed by [Rafael Vieira](https://github.com/TechBeme)**
+**Desenvolvido por [Rafael Vieira](https://github.com/TechBeme)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
 [![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)

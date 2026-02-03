@@ -11,7 +11,7 @@
 
 [Características](#-características) • [Arquitectura](#-arquitectura) • [Instalación](#-instalación) • [Configuración](#-configuración) • [Uso](#-uso) • [CI/CD](#-cicd-github-actions)
 
-**Idiomas:** [🇧🇷 Português](README.pt-BR.md) • [🇺🇸 English](README.md)
+**Idiomas:** [🇧🇷 Português](README.md) • [🇺🇸 English](README.en.md)
 
 </div>
 
