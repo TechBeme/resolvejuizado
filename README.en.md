@@ -35,13 +35,13 @@
 
 ## 🎯 Overview
 
-**ResolveJuizado Pipeline** is an enterprise-level system that automates the collection, AI-powered processing, and publication of news from **24 major Procon websites in Brazil**. The pipeline operates in two distinct phases, ensuring scalability and reliability through parallel processing and automatic failure recovery.
+**ResolveJuizado Pipeline** collects news from **24 Procon websites in Brazil**, processes the content with AI, and publishes the articles to WordPress. Discovery and processing run as separate phases with parallel tasks, retries, and recovery for articles that exceed the timeout.
 
 ### Two-Phase Pipeline
 
 **Phase 1 - Discovery (Parallel):**
 - Simultaneous crawling of 24 Procon websites
-- Intelligent duplicate detection
+- Duplicate detection through unique URLs
 - Automatic stop when existing URL is found
 - Automatic retry with fallback
 
@@ -58,7 +58,7 @@
 
 ### 🚀 Performance and Scalability
 - **100% parallel processing** with `Promise.allSettled()`
-- **Automatic retry** with intelligent fallback
+- **Automatic retry** rotating through Firecrawl keys
 - **Automatic recovery** of orphaned articles (10min timeout)
 - **Duplicate detection** via unique URL in database
 
@@ -70,12 +70,12 @@
 - **Automatic image optimization** with Sharp (reduces 60-80% of size)
 
 ### 📊 Observability
-- **Dual-mode logs**: structured JSON (local) + user-friendly (GitHub Actions)
+- **Dual-mode logs**: structured JSON locally and summarized text in GitHub Actions
 - **Emojis and natural language** in CI/CD logs
 - **Detailed summary** with statistics, URLs, and success rate
-- **Complete tracking** via `article_events`
+- **Step tracking** via `article_events`
 
-### 🔒 Reliability
+### 🔒 Retries and Recovery
 - **State machine** with 4 stages (extraction → refine → media → publish)
 - **Automatic retry** with fallback between Firecrawl keys
 - **Idempotency** guaranteed by UNIQUE constraints
@@ -253,7 +253,7 @@ Configure your Firecrawl API key in `.env`:
 FIRECRAWL_API_KEY=fc-your-api-key-here
 ```
 
-The system uses intelligent caching and automatic retry to optimize requests.
+The system caches responses and automatically retries failed requests.
 
 ### 3. Supabase Database
 
@@ -284,7 +284,7 @@ Creates 25 categories in WordPress, one for each state with configured Procon.
 ### Main Commands
 
 ```bash
-# Complete pipeline (discovery + processing)
+# Run discovery and processing
 npm run dev
 
 # Process pending articles only (skip discovery)
@@ -296,7 +296,7 @@ npm run dev -- --sites procon-df-gov-br-category-noticias,procon-es-gov-br --lim
 # Publish directly to production (not as draft)
 npm run dev -- --skip-crawl --limit 20 --publish
 
-# View complete help
+# View CLI options
 npm run dev -- --help
 ```
 
@@ -324,7 +324,7 @@ npm run dev -- --skip-crawl --limit 5
 npm run dev -- --skip-crawl --sites procon-df-gov-br-category-noticias,procon-es-gov-br --limit 10 --publish
 ```
 
-**Complete crawl of all sites + process 50 articles:**
+**Crawl all 24 sites and process 50 articles:**
 ```bash
 npm run dev -- --limit 50 --publish
 ```
@@ -382,7 +382,7 @@ Add in GitHub: `Settings → Secrets and variables → Actions → New repositor
 
 
 
-### User-Friendly Logs
+### GitHub Actions Logs
 
 The system automatically detects when running on GitHub Actions (`GITHUB_ACTIONS=true`) and switches to formatted logs:
 
@@ -438,7 +438,7 @@ In GitHub Actions, add `HTTP_PROXY` and `HTTPS_PROXY` as Secrets.
 
 ### Database Structure
 
-The complete schema is in `supabase/tables/`. Main tables:
+The schema files are in `supabase/tables/`. Main tables:
 
 - **ingestion_runs** - Pipeline execution history
 - **articles** - Articles with state machine (extraction → refine → media → publish)

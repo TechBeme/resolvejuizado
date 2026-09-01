@@ -35,13 +35,13 @@
 
 ## 🎯 Visão Geral
 
-O **ResolveJuizado Pipeline** é um sistema de nível empresarial que automatiza a coleta, processamento com IA e publicação de notícias dos **24 principais sites Procon do Brasil**. O pipeline opera em duas fases distintas, garantindo escalabilidade e confiabilidade através de processamento paralelo e recuperação automática de falhas.
+O **ResolveJuizado Pipeline** coleta notícias de **24 sites Procon do Brasil**, processa o conteúdo com IA e publica os artigos no WordPress. A descoberta e o processamento rodam em fases separadas, com tarefas paralelas, retries e recuperação de artigos que excedem o timeout.
 
 ### Pipeline de Duas Fases
 
 **Fase 1 - Descoberta (Paralelo):**
 - Crawl simultâneo de 24 sites Procon
-- Detecção inteligente de duplicatas
+- Detecção de duplicatas por URL única
 - Parada automática ao encontrar URL existente
 - Retry automático com fallback
 
@@ -58,7 +58,7 @@ O **ResolveJuizado Pipeline** é um sistema de nível empresarial que automatiza
 
 ### 🚀 Performance e Escalabilidade
 - **Processamento 100% paralelo** com `Promise.allSettled()`
-- **Retry automático** com fallback inteligente
+- **Retry automático** alternando entre chaves Firecrawl
 - **Recuperação automática** de artigos órfãos (timeout 10min)
 - **Detecção de duplicatas** via URL única no banco
 
@@ -70,12 +70,12 @@ O **ResolveJuizado Pipeline** é um sistema de nível empresarial que automatiza
 - **Otimização automática de imagens** com Sharp (reduz 60-80% do tamanho)
 
 ### 📊 Observabilidade
-- **Logs dual-mode**: JSON estruturado (local) + user-friendly (GitHub Actions)
+- **Logs dual-mode**: JSON estruturado localmente e texto resumido no GitHub Actions
 - **Emojis e linguagem natural** nos logs do CI/CD
 - **Resumo detalhado** com estatísticas, URLs e taxa de sucesso
-- **Rastreamento completo** via `article_events`
+- **Rastreamento de etapas** via `article_events`
 
-### 🔒 Confiabilidade
+### 🔒 Retries e Recuperação
 - **State machine** com 4 estágios (extraction → refine → media → publish)
 - **Retry automático** com fallback entre chaves Firecrawl
 - **Idempotência** garantida por UNIQUE constraints
@@ -253,7 +253,7 @@ Configure sua chave da API Firecrawl no `.env`:
 FIRECRAWL_API_KEY=fc-your-api-key-here
 ```
 
-O sistema usa cache inteligente e retry automático para otimizar as requisições.
+O sistema mantém cache de respostas e repete automaticamente as requisições que falham.
 
 ### 3. Banco de Dados Supabase
 
@@ -284,7 +284,7 @@ Cria 25 categorias no WordPress, uma para cada estado com Procon configurado.
 ### Comandos Principais
 
 ```bash
-# Pipeline completo (discovery + processing)
+# Executar discovery e processing
 npm run dev
 
 # Apenas processar artigos pending (pula discovery)
@@ -296,7 +296,7 @@ npm run dev -- --sites procon-df-gov-br-category-noticias,procon-es-gov-br --lim
 # Publicar direto em produção (não como rascunho)
 npm run dev -- --skip-crawl --limit 20 --publish
 
-# Ver ajuda completa
+# Ver opções da CLI
 npm run dev -- --help
 ```
 
@@ -324,7 +324,7 @@ npm run dev -- --skip-crawl --limit 5
 npm run dev -- --skip-crawl --sites procon-df-gov-br-category-noticias,procon-es-gov-br --limit 10 --publish
 ```
 
-**Crawl completo de todos os sites + processar 50 artigos:**
+**Executar crawl nos 24 sites e processar 50 artigos:**
 ```bash
 npm run dev -- --limit 50 --publish
 ```
@@ -382,7 +382,7 @@ Adicione no GitHub: `Settings → Secrets and variables → Actions → New repo
 
 
 
-### Logs User-Friendly
+### Logs do GitHub Actions
 
 O sistema detecta automaticamente quando está rodando no GitHub Actions (`GITHUB_ACTIONS=true`) e muda para logs formatados:
 
@@ -438,7 +438,7 @@ No GitHub Actions, adicione `HTTP_PROXY` e `HTTPS_PROXY` como Secrets.
 
 ### Estrutura do Banco
 
-O schema completo está em `supabase/tables/`. Principais tabelas:
+Os arquivos do schema estão em `supabase/tables/`. Principais tabelas:
 
 - **ingestion_runs** - Histórico de execuções do pipeline
 - **articles** - Artigos com state machine (extraction → refine → media → publish)

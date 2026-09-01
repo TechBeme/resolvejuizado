@@ -20,7 +20,6 @@
 ## 📋 Tabla de Contenidos
 
 - [Visión General](#-visión-general)
-- [Sobre el Desarrollador](#-sobre-el-desarrollador)
 - [Características](#-características)
 - [Stack Tecnológico](#-stack-tecnológico)
 - [Arquitectura](#-arquitectura)
@@ -42,7 +41,7 @@
 
 **Fase 1 - Descubrimiento (Paralelo):**
 - Rastreo simultáneo de 24 sitios Procon
-- Detección inteligente de duplicados
+- Detección de duplicados mediante URLs únicas
 - Parada automática al encontrar URL existente
 - Reintento automático con fallback
 
@@ -55,47 +54,11 @@
 
 ---
 
-## 👨‍💻 Sobre el Desarrollador
-
-<div align="center">
-
-**Desarrollado por Rafael Vieira (TechBeme)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
-[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
-[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
-[![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
-
-**Desarrollador Full-Stack & Especialista en Automatización con IA**
-
-Especializado en **web scraping**, **sistemas de automatización**, **aplicaciones web modernas** e **integraciones con IA**.
-
-### 💼 Experiencia Principal
-
-- 🔍 Web Scraping & Extracción de Datos
-- ⚡ Automatización de Procesos & Workflows
-- 💻 Desarrollo Full-Stack (Next.js, React, Python, TypeScript)
-- 🤖 Integraciones con IA (OpenAI, Anthropic, sistemas RAG)
-- 📊 Diseño & Optimización de Bases de Datos
-- 🎨 Desarrollo de UI/UX Modernas
-
-### 🌍 Idiomas
-
-🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
-
-### 📬 Contacto
-
-**Email**: [contact@techbe.me](mailto:contact@techbe.me)
-
-</div>
-
----
-
 ## ✨ Características
 
 ### 🚀 Rendimiento y Escalabilidad
 - **Procesamiento 100% paralelo** con `Promise.allSettled()`
-- **Reintento automático** con fallback inteligente
+- **Reintento automático** alternando entre claves de Firecrawl
 - **Recuperación automática** de artículos huérfanos (timeout 10min)
 - **Detección de duplicados** vía URL única en la base de datos
 
@@ -107,10 +70,10 @@ Especializado en **web scraping**, **sistemas de automatización**, **aplicacion
 - **Optimización automática de imágenes** con Sharp (reduce 60-80% del tamaño)
 
 ### 📊 Observabilidad
-- **Logs dual-mode**: JSON estructurado (local) + user-friendly (GitHub Actions)
+- **Logs dual-mode**: JSON estructurado localmente y texto resumido en GitHub Actions
 - **Emojis y lenguaje natural** en los logs del CI/CD
 - **Resumen detallado** con estadísticas, URLs y tasa de éxito
-- **Rastreo completo** vía `article_events`
+- **Rastreo de etapas** vía `article_events`
 
 ### 🔒 Confiabilidad
 - **State machine** con 4 etapas (extraction → refine → media → publish)
@@ -290,7 +253,7 @@ Configure su clave de API Firecrawl en `.env`:
 FIRECRAWL_API_KEY=fc-your-api-key-here
 ```
 
-El sistema usa caché inteligente y reintento automático para optimizar las solicitudes.
+El sistema almacena respuestas en caché y reintenta automáticamente las solicitudes fallidas.
 
 ### 3. Base de Datos Supabase
 
@@ -321,7 +284,7 @@ Crea 25 categorías en WordPress, una para cada estado con Procon configurado.
 ### Comandos Principales
 
 ```bash
-# Pipeline completo (discovery + processing)
+# Ejecutar discovery y processing
 npm run dev
 
 # Solo procesar artículos pending (salta discovery)
@@ -333,7 +296,7 @@ npm run dev -- --sites procon-df-gov-br-category-noticias,procon-es-gov-br --lim
 # Publicar directo en producción (no como borrador)
 npm run dev -- --skip-crawl --limit 20 --publish
 
-# Ver ayuda completa
+# Ver opciones de la CLI
 npm run dev -- --help
 ```
 
@@ -361,7 +324,7 @@ npm run dev -- --skip-crawl --limit 5
 npm run dev -- --skip-crawl --sites procon-df-gov-br-category-noticias,procon-es-gov-br --limit 10 --publish
 ```
 
-**Crawl completo de todos los sitios + procesar 50 artículos:**
+**Ejecutar crawl en los 24 sitios y procesar 50 artículos:**
 ```bash
 npm run dev -- --limit 50 --publish
 ```
@@ -419,7 +382,7 @@ Agregue en GitHub: `Settings → Secrets and variables → Actions → New repos
 
 
 
-### Logs User-Friendly
+### Logs de GitHub Actions
 
 El sistema detecta automáticamente cuando está ejecutándose en GitHub Actions (`GITHUB_ACTIONS=true`) y cambia a logs formateados:
 
@@ -475,7 +438,7 @@ En GitHub Actions, agregue `HTTP_PROXY` y `HTTPS_PROXY` como Secrets.
 
 ### Estructura de la Base de Datos
 
-El schema completo está en `supabase/tables/`. Principales tablas:
+Los archivos del schema están en `supabase/tables/`. Principales tablas:
 
 - **ingestion_runs** - Historial de ejecuciones del pipeline
 - **articles** - Artículos con state machine (extraction → refine → media → publish)

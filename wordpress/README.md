@@ -7,7 +7,7 @@ Esta pasta contém snippets PHP que devem ser instalados no WordPress via plugin
 ### `snippet-painel-configuracoes.php`
 **Painel de Configurações - Notícias Automáticas**
 
-Cria uma interface completa no WordPress Admin para configurar:
+Cria uma tela no WordPress Admin para configurar:
 - 🤖 Modelos de IA (texto e imagem)
 - 📝 Comandos personalizados para a IA (reescrita e revisão)
 - ❓ Documentação e ajuda
