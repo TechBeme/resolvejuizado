@@ -20,7 +20,6 @@
 ## 📋 Sumário
 
 - [Visão Geral](#-visão-geral)
-- [Sobre o Desenvolvedor](#-sobre-o-desenvolvedor)
 - [Características](#-características)
 - [Stack Tecnológica](#-stack-tecnológica)
 - [Arquitetura](#-arquitetura)
@@ -52,42 +51,6 @@ O **ResolveJuizado Pipeline** é um sistema de nível empresarial que automatiza
 - Otimização SEO automática (RankMath)
 - Geração de 3 imagens via IA
 - Publicação WordPress com categorização por estado
-
----
-
-## 👨‍💻 Sobre o Desenvolvedor
-
-<div align="center">
-
-**Desenvolvido por Rafael Vieira (TechBeme)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
-[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
-[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
-[![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
-
-**Desenvolvedor Full-Stack & Especialista em Automação com IA**
-
-Especializado em **web scraping**, **sistemas de automação**, **aplicações web modernas** e **integrações com IA**.
-
-### 💼 Expertise Principal
-
-- 🔍 Web Scraping & Extração de Dados
-- ⚡ Automação de Processos & Workflows
-- 💻 Desenvolvimento Full-Stack (Next.js, React, Python, TypeScript)
-- 🤖 Integrações com IA (OpenAI, Anthropic, sistemas RAG)
-- 📊 Design & Otimização de Bancos de Dados
-- 🎨 Desenvolvimento de UI/UX Modernas
-
-### 🌍 Idiomas
-
-🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
-
-### 📬 Contato
-
-**Email**: [contact@techbe.me](mailto:contact@techbe.me)
-
-</div>
 
 ---
 

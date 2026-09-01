@@ -20,7 +20,6 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
-- [About the Developer](#-about-the-developer)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Architecture](#-architecture)
@@ -52,42 +51,6 @@
 - Automatic SEO optimization (RankMath)
 - Generation of 3 AI images
 - WordPress publication with state-based categorization
-
----
-
-## 👨‍💻 About the Developer
-
-<div align="center">
-
-**Developed by Rafael Vieira (TechBeme)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
-[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
-[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
-[![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
-
-**Full-Stack Developer & AI Automation Specialist**
-
-Specialized in **web scraping**, **automation systems**, **modern web applications**, and **AI integrations**.
-
-### 💼 Core Expertise
-
-- 🔍 Web Scraping & Data Extraction
-- ⚡ Process Automation & Workflows
-- 💻 Full-Stack Development (Next.js, React, Python, TypeScript)
-- 🤖 AI Integrations (OpenAI, Anthropic, RAG systems)
-- 📊 Database Design & Optimization
-- 🎨 Modern UI/UX Development
-
-### 🌍 Languages
-
-🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
-
-### 📬 Contact
-
-**Email**: [contact@techbe.me](mailto:contact@techbe.me)
-
-</div>
 
 ---
 
